@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-service-js",
+  "version": "0.1.0",
+  "description": "Serverless SampleApp",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Apache2.0",
+  "dependencies": {
+    "aws-sdk": "^2.1023.0",
+    "validatorjs": "^3.22.1"
+  }
+}
