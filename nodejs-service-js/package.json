@@ -9,6 +9,7 @@
   "license": "Apache2.0",
   "dependencies": {
     "aws-sdk": "^2.1023.0",
-    "validatorjs": "^3.22.1"
+    "validatorjs": "^3.22.1",
+    "ejs": "^3.1.6"
   }
 }

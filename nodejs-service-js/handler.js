@@ -1,5 +1,7 @@
 'use strict';
-var validator = require('validatorjs');
+var ejs = require('ejs');
+const fs = require('fs');
+const validator = require('validatorjs');
 
 let param = {
   username: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
@@ -13,16 +15,17 @@ module.exports.hello = async (event) => {
     console.log(validation.errors.all())
   }
 
+  // HTML出力
+  const index = fs.readFileSync('./templates/index.ejs','utf8');
+  const data = {
+    item: {
+      name: 'yosistamp'
+    }
+  };
   return {
     statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: 'Go Serverless v1.0! Your function executed successfully!',
-        input: event,
-      },
-      null,
-      2
-    ),
+    headers: {"content-type": "text/html"},
+    body: ejs.render(index, data)
   };
 
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration
